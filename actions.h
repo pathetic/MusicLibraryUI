@@ -1,0 +1,4 @@
+#ifndef MUSIC_LIBRARY_ACTIONS_H
+#define MUSIC_LIBRARY_ACTIONS_H
+
+#endif
