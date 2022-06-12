@@ -3,9 +3,25 @@
 #include <iomanip>
 #include <iostream>
 
+// This shouldn't be in default constructor
 Song::Song()
 {
-    char inp[MAX_LEN];
+   
+}
+
+Song::Song(std::string& ISMN, std::string& title, std::string& artists, std::string& genres, std::string& album, int streams, int rating, int duration, int year)
+:ISMN(ISMN), Title(title), Artist(artists), Genre(genres), Album(album), Streams(streams), Rating(rating), Duration(duration), Year(year)
+{}
+
+Song::~Song() {
+
+}
+
+void Song::read() {
+	
+	//TODO: Add ostream operator overloading
+
+	 char inp[MAX_LEN];
     
     std::cout << "Introdu ISMN-ul melodiei:\n";
     std::cin.getline(inp,MAX_LEN);
@@ -31,8 +47,6 @@ Song::Song()
     std::cin.getline(inp,MAX_LEN);
     this->Album = inp;
 
-	//TODO: Add ostream operator overloading
-
     std::cout << "Introdu numarul de streamuri\n";
     std::cin >> this->Streams;
     std::cin.get();
@@ -48,14 +62,6 @@ Song::Song()
     std::cout << "Introdu anul lansarii melodiei\n";
     std::cin >> this->Year;
     std::cin.get();
-}
-
-Song::Song(std::string& ISMN, std::string& title, std::string& artists, std::string& genres, std::string& album, int streams, int rating, int duration, int year)
-:ISMN(ISMN), Title(title), Artist(artists), Genre(genres), Album(album), Streams(streams), Rating(rating), Duration(duration), Year(year)
-{}
-
-Song::~Song() {
-
 }
 
 void Song::listen() {
