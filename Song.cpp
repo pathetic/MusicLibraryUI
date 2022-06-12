@@ -31,32 +31,7 @@ Song::Song()
     std::cin.getline(inp,MAX_LEN);
     this->Album = inp;
 
-
-    // int artistsNr,genresNr;
-
-    //     std::cout << "Introdu numarul de artisti\n";
-    //     std::cin >> artistsNr;
-    //     std::cin.get();
-    //     Artist.reserve(artistsNr); // alocam numarul de autori
-    //     artistsNr++;
-
-    //     for (int i = 1; i < artistsNr; i++) {
-    //         std::cout << "Introdu artistul cu numarul " << i << "\n";
-    //         std::cin.getline(inp,MAX_LEN);
-    //         this->Artist.emplace_back(inp);
-    //     }
-
-    //     std::cout << "Introdu numarul de genuri\n";
-    //     std::cin >> genresNr;
-    //     std::cin.get();
-    //     Genre.reserve(genresNr); // alocam numarul de genuri
-    //     genresNr++;
-
-    //     for (int i = 1; i < genresNr; i++) {
-    //         std::cout << "Introdu genul cu numarul " << i << "\n";
-    //         std::cin.getline(inp,MAX_LEN);
-    //         this->Genre.emplace_back(inp);
-    //     }
+	//TODO: Add ostream operator overloading
 
     std::cout << "Introdu numarul de streamuri\n";
     std::cin >> this->Streams;
@@ -74,18 +49,6 @@ Song::Song()
     std::cin >> this->Year;
     std::cin.get();
 }
-
-// Song::Song(std::string& ISMN, std::string& title, std::vector<std::string>& artists, std::vector<std::string>& genres, std::string& album, int streams, int rating, int duration, int year)
-// :ISMN(ISMN), Title(title), Album(album), Streams(streams), Rating(rating), Duration(duration), Year(year)
-// {
-//     for (const auto& str : artists) {
-//         Artist.emplace_back(str);
-//     }
-
-//     for (const auto& str : genres) {
-//         Genre.emplace_back(str);
-//     }
-// }
 
 Song::Song(std::string& ISMN, std::string& title, std::string& artists, std::string& genres, std::string& album, int streams, int rating, int duration, int year)
 :ISMN(ISMN), Title(title), Artist(artists), Genre(genres), Album(album), Streams(streams), Rating(rating), Duration(duration), Year(year)
@@ -105,10 +68,6 @@ std::string Song::toString() const
 	str << "Song: " << Title << "\n";
     str << "ISMN: " << ISMN << "\n";
 	str << "Artists: ";
-    // for (auto& aritstul : Artist) {
-    //     str << aritstul << ", ";
-    // }
-    // str << "\n";
     str << "Arist: " << Artist << "\n";
     str << "Duration: " << Duration << "\n";
     str << "Release year: " << Year << "\n";
@@ -116,11 +75,6 @@ std::string Song::toString() const
     str << "Rating: " << Rating << "\n";
 
     str << "Genre: " << Genre << "\n";
-    // str << "Genres: ";
-    // for (auto& genresul : Genre) {
-    //     str << genresul << ", ";
-    // }
-    // str << "\n";
 
     return str.str();
 }
